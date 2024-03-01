@@ -1,0 +1,449 @@
+@charset "UTF-8";
+
+/*contenedores*/
+
+.filaMedio {
+	background-color: rgb(32, 32, 32);
+}
+
+.seccion {
+	color: rgb(192, 192, 192);
+	font-size: 30px;
+	text-align: left;
+	
+	margin-bottom: 10px;
+}
+
+.seccionSm {
+	color: rgb(192, 192, 192);
+	font-size: 24px;
+	text-align: left;
+	
+	margin-bottom: 10px;
+}
+
+.seccionXs {
+
+	color: rgb(192, 192, 192);
+	font-size: 15px;
+	text-align: left;
+	
+	margin-bottom: 10px;
+}
+
+/*carousel*/
+.carouselCMR {
+	background-color: rgb(255, 255, 255);
+}
+
+.imagenCarousel {
+	height: 95%;
+	width: 95%;
+}
+
+.imagenesPagPrin {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 20px;
+}
+
+.imagenesPagPrin:hover {
+	transform: scale(1.2);
+}
+
+/*Contenedores juegos plataforma*/
+.azul {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	color: white;
+
+}
+
+.azul:hover {
+	transform: scale(1.1);
+}
+
+.imagenCarritoPequenio {
+	width: 100%;
+	height: 100%;
+}
+
+.iconoCarritoPequenio {
+	background-color: rgb(36, 36, 36);
+	border-radius: 50%;
+	height: 35px;
+	width: 45px;
+
+}
+
+.iconoCarritoPequenioXs {
+	background-color: rgb(36, 36, 36);
+	border-radius: 50%;
+	height: 30px;
+	width: 40px;
+}
+
+.iconoCarritoHover:hover {
+	background-color: rgb(210, 210, 210);
+}
+
+.iconoCarritofocus:focus {
+	background-color: rgb(0, 255, 0);
+}
+
+/*MenuVertical*/
+
+.contenedorMV {
+	background-color: rgb(0, 0, 83);
+}
+
+.contenedorMVXbox {
+	background-color: rgb(0, 74, 00);
+}
+
+.letraMenuLateral {
+	color: rgb(192, 192, 192);
+	text-align: left;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.letraMenuLateralSm {
+	color: rgb(192, 192, 192);
+	text-align: left;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+.letraMenuLateralXs {
+	color: rgb(192, 192, 192);
+	text-align: left;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+.nombreJuego {
+
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.border {
+	border: 1px solid black;
+}
+
+
+
+/* Cabecera*/
+.blancoFijo {
+
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 25px;
+
+}
+
+.blancoFijoSm {
+
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+}
+
+.contenedorMenu {
+	background-color: rgb(20, 20, 20);
+	height: 85px;
+	padding: 15px;
+}
+
+.enlaces {
+
+	text-decoration: none;
+	color: rgb(192, 192, 192);
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 25px;
+
+}
+
+.enlacesSm {
+
+	text-decoration: none;
+	color: rgb(192, 192, 192);
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+}
+
+
+.enlaces__item:hover {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+
+}
+
+.menuDesplegable {
+	background-color: rgb(50, 50, 50);
+
+}
+
+.logotipo {
+
+	height: 100%;
+}
+
+.iconoCarrito {
+	background-color: black;
+	border-radius: 50%;
+}
+
+.bordeBajo {
+	border: 2px solid solid solid none white;
+}
+
+/*contenedores plataforma de juegos*/
+.imagenes {
+	width: 100%;
+	height: 100%;
+	border: 2px solid rgb(187, 187, 187);
+	border-radius: 5% 5% 5% 5%;
+}
+
+.letraNJuego {
+	font-size: 14px;
+	color: white;
+	margin-top: 8px;
+	text-align: left;
+}
+
+.letraModoJuego {
+	font-size: 20px;
+	color: white;
+	margin-top: 8px;
+	text-align: center;
+}
+
+.letraModoJuegoXs {
+	font-size: 15px;
+	color: white;
+	margin-top: 8px;
+	text-align: center;
+}
+
+.precio {
+	text-align: right;
+	float: right;
+	font-size: 17px;
+	margin-top: 5px;
+}
+/*carritoPrincipal*/
+.contenedoresCP{
+	border-radius: 3% 3% 3% 3% ;
+	background-color: rgb(60, 60, 60);
+	text-align: left;
+}
+
+.bordeCarritoPrincipal{
+	padding-left: 13%;
+	padding-right: 25%;
+	padding-top: 3%;
+}
+.contenedoresCPR{
+	background-color: rgb(32, 32, 32);
+	text-align: left;
+}
+.textoInfo{
+	color: white;
+	font-size: 17px;
+}
+.textoBorrar{
+	color: rgb(192, 192, 192);
+	font-size: 17px;
+}
+
+.textoInfoSm{
+	color: white;
+	font-size: 13px;
+}
+.textoBorrarSm{
+	color: rgb(192, 192, 192);
+	font-size: 13px;
+	margin-top:-10px;
+}
+
+.textoInfoXs{
+	color: white;
+	font-size: 10px;
+	
+}
+.textoBorrarXs{
+	color: rgb(192, 192, 192);
+	font-size: 10px;
+	margin-top:-10px;
+}
+.precioCarrito{
+	text-align: center;
+	color:white;
+	font-size: 180%;
+}
+.precioCarritoSm{
+	text-align: center;
+	color:white;
+	font-size: 120%;
+}
+.margenConPiePagina{
+	margin-bottom: 5%;
+}
+.precioPago{
+	text-align: center;
+	color: rgb(192, 192, 192);
+	font-size: 18px;		
+}
+.tituloPago{
+	text-align: left;
+	color: rgb(192, 192, 192);
+	font-size: 18px;		
+}
+.total{
+	text-align: left;
+	color: rgb(255, 255, 255);
+	font-size: 32px;
+	
+}
+.precioTotal{
+	text-align: center;
+	color: rgb(255, 255, 255);
+	font-size: 32px;
+}
+
+.precioPagoSm{
+	text-align: center;
+	color: rgb(192, 192, 192);
+	font-size: 14px;		
+}
+.tituloPagoSm{
+	text-align: left;
+	color: rgb(192, 192, 192);
+	font-size: 14px;		
+}
+.totalSm{
+	text-align: left;
+	color: rgb(255, 255, 255);
+	font-size: 24px;
+	
+}
+.precioTotalSm{
+	text-align: center;
+	color: rgb(255, 255, 255);
+	font-size: 24px;
+}
+
+.precioPagoXs{
+	text-align: center;
+	color: rgb(192, 192, 192);
+	font-size: 10px;		
+}
+.tituloPagoXs{
+	text-align: left;
+	color: rgb(192, 192, 192);
+	font-size: 10px;		
+}
+.totalXs{
+	text-align: left;
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	
+}
+.precioTotalXs{
+	text-align: center;
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	
+}
+/*formulario*/
+table {
+	border: 1px solid black;
+	text-align: left;
+	background-color: rgb(105, 105, 105);
+	margin-top: 0.5%;
+	color:rgb(228, 228, 228)
+
+}
+
+th {
+
+	text-align: center;
+	background-color: rgb(70, 70, 70);
+	padding: 1.5%;
+	text-decoration: underline;
+}
+
+tr {
+	padding: 0.5%;
+
+}
+
+td {
+	padding: 0.5%;
+
+
+}
+
+label {
+	width: 100%;
+	
+
+}
+
+.formulario1 {
+	padding: 100px;
+}
+
+.tablaPago {
+
+	text-align: center;
+
+
+}
+
+.siguiente {
+	text-align: center;
+}
+
+
+/*pie de pagina*/
+.piePagina {
+	background-color: rgb(20, 20, 20);
+	height: 110%;
+
+}
+
+.letraPP {
+	color: rgb(192, 192, 192);
+	text-align: center;
+	margin-bottom: 15px;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.letraPPSm {
+	color: rgb(192, 192, 192);
+	text-align: center;
+	margin-bottom: 15px;
+	text-decoration: none;
+	font-size: 12px;
+
+}
