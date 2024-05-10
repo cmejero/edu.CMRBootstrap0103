@@ -234,7 +234,7 @@ function pulsar(v) {
 
 
 }
-function eliminar (y){
+function eliminar(y){
    veces = 0
    arrayJuegos[y][1]++  
    localStorage.setItem("array", arrayJuegos)
