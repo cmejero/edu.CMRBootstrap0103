@@ -87,6 +87,7 @@ let sumarTotal = "";
 
 
 precioTotal()
+cantidadPorJuego()
 cantidadTotal()
 
 
@@ -98,7 +99,7 @@ cantidadTotal()
 
 function maestra() {
 
-	if (validarNumTarjeta() && nomTitular() && fechaCaducidad()  && codSeguridad()) {
+	if (validarNumTarjeta() && nomTitular() && fechaCaducidad() && codSeguridad()) {
 		return true;
 	}
 
@@ -187,7 +188,7 @@ function codSeguridad() {
 
 
 function fechaCaducidad() {
-	alert("hola")
+
 	let fechaHoy = new Date();
 	let fechaIngresada = new Date(document.getElementById("fechaCad").value)
 
@@ -247,12 +248,17 @@ function pulsar(v) {
 	arrayJuegos[v][1]++
 	veces++
 	localStorage.setItem("array", JSON.stringify(arrayJuegos));
+	productosSeleccionados()
+	cantidadPorJuego()
+
 }
 
 function decrementar(y) {
 	veces = 0
 	arrayJuegos[y][1]--;
 	localStorage.setItem("array", JSON.stringify(arrayJuegos));
+	productosSeleccionados()
+	cantidadPorJuego()
 }
 
 
@@ -260,21 +266,21 @@ function eliminar(y) {
 	veces = 0
 	arrayJuegos[y][1] = 0;
 	localStorage.setItem("array", JSON.stringify(arrayJuegos));
+	productosSeleccionados()
+	cantidadPorJuego()
 }
 
 
-function mostrarCantidad(v){
-	v= array[v][1]		
-	document.getElementById("mostrarCantidad").innerHTML=(v)
-	
-	
+function mostrarCantidad(v) {
+	v = array[v][1]
+	document.getElementById("mostrarCantidad").innerHTML = (v)
+
+
 }
 
 
 
 function productosSeleccionados() {
-
-
 
 	document.getElementById("juegoSeleccionados").innerHTML = "";
 
@@ -289,10 +295,16 @@ function productosSeleccionados() {
 		}
 
 	}
+
+
+
+
 }
 
 
 function precioTotal() {
+
+
 	let aux = "";
 
 	for (let i in arrayJuegos) {
@@ -303,11 +315,17 @@ function precioTotal() {
 			aux = Number(aux + sumarTotal);
 		}
 	}
+
 	document.getElementById("precioTotal").innerHTML = (aux)
+
 
 }
 
 function cantidadTotal() {
+
+
+
+
 	let aux = "";
 
 	for (let i in arrayJuegos) {
@@ -319,4 +337,71 @@ function cantidadTotal() {
 	}
 	document.getElementById("cantidadTotal").innerHTML = (aux)
 
+
+
+
+}
+
+
+function cantidadPorJuego() {
+
+
+
+	document.getElementById("juego0").innerHTML = (Number(arrayJuegos[0][1]))
+	document.getElementById("juego1").innerHTML = (Number(arrayJuegos[1][1]))
+	document.getElementById("juego2").innerHTML = (Number(arrayJuegos[2][1]))
+	document.getElementById("juego3").innerHTML = (Number(arrayJuegos[3][1]))
+	document.getElementById("juego4").innerHTML = (Number(arrayJuegos[4][1]))
+	document.getElementById("juego5").innerHTML = (Number(arrayJuegos[5][1]))
+	document.getElementById("juego6").innerHTML = (Number(arrayJuegos[6][1]))
+	document.getElementById("juego7").innerHTML = (Number(arrayJuegos[7][1]))
+	document.getElementById("juego8").innerHTML = (Number(arrayJuegos[8][1]))
+	document.getElementById("juego9").innerHTML = (Number(arrayJuegos[9][1]))
+	document.getElementById("juego10").innerHTML = (Number(arrayJuegos[10][1]))
+	document.getElementById("juego11").innerHTML = (Number(arrayJuegos[11][1]))
+	document.getElementById("juego12").innerHTML = (Number(arrayJuegos[12][1]))
+	document.getElementById("juego13").innerHTML = (Number(arrayJuegos[13][1]))
+	document.getElementById("juego14").innerHTML = (Number(arrayJuegos[14][1]))
+	document.getElementById("juego15").innerHTML = (Number(arrayJuegos[15][1]))
+	document.getElementById("juego16").innerHTML = (Number(arrayJuegos[16][1]))
+	document.getElementById("juego17").innerHTML = (Number(arrayJuegos[17][1]))
+	document.getElementById("juego18").innerHTML = (Number(arrayJuegos[18][1]))
+	document.getElementById("juego19").innerHTML = (Number(arrayJuegos[19][1]))
+	document.getElementById("juego20").innerHTML = (Number(arrayJuegos[20][1]))
+	document.getElementById("juego21").innerHTML = (Number(arrayJuegos[21][1]))
+	document.getElementById("juego22").innerHTML = (Number(arrayJuegos[22][1]))
+	document.getElementById("juego23").innerHTML = (Number(arrayJuegos[23][1]))
+	document.getElementById("juego24").innerHTML = (Number(arrayJuegos[24][1]))
+	document.getElementById("juego25").innerHTML = (Number(arrayJuegos[25][1]))
+	document.getElementById("juego26").innerHTML = (Number(arrayJuegos[26][1]))
+	document.getElementById("juego27").innerHTML = (Number(arrayJuegos[27][1]))
+	document.getElementById("juego28").innerHTML = (Number(arrayJuegos[28][1]))
+	document.getElementById("juego29").innerHTML = (Number(arrayJuegos[29][1]))
+	document.getElementById("juego30").innerHTML = (Number(arrayJuegos[30][1]))
+	document.getElementById("juego31").innerHTML = (Number(arrayJuegos[31][1]))
+	document.getElementById("juego32").innerHTML = (Number(arrayJuegos[32][1]))
+	document.getElementById("juego32").innerHTML = (Number(arrayJuegos[33][1]))
+
+	cantidadTotal()
+
+
+}
+
+//document.getElementById("myP1").style.display = "none";
+//document.getElementById("myP1").style.display = "flex";
+// document.getElementById("myP1").style.display = "hidden";
+mostrarJuegos()
+
+function mostrarJuegos(){
+	
+	
+		if(false){
+			
+			document.getElementById("myP1").style.display = "flex";
+		}
+		else{
+			document.getElementById("myP1").style.display = "none";
+		}
+		
+	
 }
