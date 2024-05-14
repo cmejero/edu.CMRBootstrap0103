@@ -59,7 +59,7 @@ arrayJuegos.push(["Blade", 0, 69.50]);
 console.log(arrayJuegos);
 
 
-
+console.log("en numero " + Number(arrayJuegos[7][1]))
 
 let veces = 0;
 
@@ -247,7 +247,9 @@ function codigoPostal() {
 function pulsar(v) {
 	arrayJuegos[v][1]++
 	veces++
+
 	localStorage.setItem("array", JSON.stringify(arrayJuegos));
+
 	productosSeleccionados()
 	cantidadPorJuego()
 
@@ -259,6 +261,8 @@ function decrementar(y) {
 	localStorage.setItem("array", JSON.stringify(arrayJuegos));
 	productosSeleccionados()
 	cantidadPorJuego()
+
+
 }
 
 
@@ -387,21 +391,282 @@ function cantidadPorJuego() {
 
 }
 
-//document.getElementById("myP1").style.display = "none";
-//document.getElementById("myP1").style.display = "flex";
-// document.getElementById("myP1").style.display = "hidden";
-mostrarJuegos()
 
-function mostrarJuegos(){
+
+
+
+
+function myFunction() {
+	
+	 var x = document.getElementById('myDIV0');    
+  if (Number(arrayJuegos[0][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV1');    
+  if (Number(arrayJuegos[1][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV2');    
+  if (Number(arrayJuegos[2][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV3');    
+  if (Number(arrayJuegos[3][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV4');    
+  if (Number(arrayJuegos[4][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV5');    
+  if (Number(arrayJuegos[5][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV6');    
+  if (Number(arrayJuegos[6][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV7');    
+  if (Number(arrayJuegos[7][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV8');    
+  if (Number(arrayJuegos[8][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV9');    
+  if (Number(arrayJuegos[9][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV10');    
+  if (Number(arrayJuegos[10][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV11');    
+  if (Number(arrayJuegos[11][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV12');    
+  if (Number(arrayJuegos[12][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV13');    
+  if (Number(arrayJuegos[13][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV14');    
+  if (Number(arrayJuegos[14][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV15');    
+  if (Number(arrayJuegos[15][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV16');    
+  if (Number(arrayJuegos[16][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV17');    
+  if (Number(arrayJuegos[17][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV18');    
+  if (Number(arrayJuegos[18][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV19');    
+  if (Number(arrayJuegos[19][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV20');    
+  if (Number(arrayJuegos[20][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV21');    
+  if (Number(arrayJuegos[21][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV22');    
+  if (Number(arrayJuegos[22][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV23');    
+  if (Number(arrayJuegos[23][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV24');    
+  if (Number(arrayJuegos[24][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV25');    
+  if (Number(arrayJuegos[25][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV26');    
+  if (Number(arrayJuegos[26][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
 	
 	
-		if(false){
-			
-			document.getElementById("myP1").style.display = "flex";
-		}
-		else{
-			document.getElementById("myP1").style.display = "none";
-		}
-		
-	
+  var x = document.getElementById('myDIV27');    
+  if (Number(arrayJuegos[27][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+   var x = document.getElementById('myDIV28');    
+  if (Number(arrayJuegos[28][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+  
+   var x = document.getElementById('myDIV29');    
+  if (Number(arrayJuegos[29][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV30');    
+  if (Number(arrayJuegos[30][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV31');    
+  if (Number(arrayJuegos[31][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV32');    
+  if (Number(arrayJuegos[32][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+  
+  
+   var x = document.getElementById('myDIV33');    
+  if (Number(arrayJuegos[33][1]) <= 0) {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
 }
+
