@@ -90,7 +90,7 @@
 }
 
 .iconoCarritofocus:active {
-	background-color: rgb(255, 134, 13);
+	background-color: rgb(251, 243, 96);
 	  animation-duration: 3s;
 }
 
@@ -255,10 +255,14 @@
 }
 
 /*carritoPrincipal*/
+.pulsar:active{
+	background-color: rgb(251, 243, 96);
+}
 .contenedoresCP {
 	border-radius: 3% 3% 3% 3%;
 	background-color: rgb(60, 60, 60);
 	text-align: left;
+	
 }
 
 .bordeCarritoPrincipal {
@@ -393,7 +397,7 @@
 .precioPagoXs {
 	text-align: center;
 	color: rgb(255, 255, 255);
-	font-size: 10px;
+	font-size: 9px;
 }
 
 .tituloPagoXs {
@@ -433,6 +437,10 @@
 	padding: 0;
 	margin: 0;
 	justify-content: center;
+};
+
+.alinearBoton{
+	margin-left:40%
 }
 
 /*formulario*/
@@ -440,8 +448,10 @@ table {
 	border: 1px solid black;
 	text-align: left;
 	background-color: rgb(105, 105, 105);
-	margin-top: 0.5%;
-	color: rgb(228, 228, 228)
+	margin-top: 2%;	
+	margin-left:1.5%;
+	color: rgb(228, 228, 228);
+	
 }
 
 th {
@@ -493,7 +503,7 @@ label {
 }
 
 .letraPP {
-	color: rgb(192, 192, 192);
+	color: rgb(255, 255, 255);
 	text-align: center;
 	margin-bottom: 15px;
 	text-decoration: none;
