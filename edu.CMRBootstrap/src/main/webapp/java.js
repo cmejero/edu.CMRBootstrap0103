@@ -65,13 +65,17 @@ let sumar = "";
 
 productosSeleccionados()
 
-let sumarTotal = "";
 
+
+let cantidadTo = "";
 let vaciarCesta = "";
-
-precioTotal()
-cantidadPorJuego()
 cantidadTotal()
+
+let sumarTotal = "";
+precioTotal()
+
+cantidadPorJuego()
+
 
 
 
@@ -266,7 +270,8 @@ function pulsar(v) {
 function decrementar(y) {
 	veces = 0
 	arrayJuegos[y][1]--;
-	localStorage.setItem("array", JSON.stringify(arrayJuegos));
+
+
 	productosSeleccionados()
 	cantidadPorJuego()
 	precioTotal()
@@ -325,36 +330,45 @@ function precioTotal() {
 
 	let aux = "";
 
+
+
 	for (let i in arrayJuegos) {
 
 		if (arrayJuegos[i][1] > 0) {
 
 			sumarTotal = Number(arrayJuegos[i][1] * arrayJuegos[i][2])
 			aux = Number(aux + sumarTotal);
+			localStorage.setItem("array", JSON.stringify(arrayJuegos));
 		}
+	}
+
+
+
+	if (Number(cantidadTo) <= 0) {
+		document.getElementById("precioTotal").innerHTML = (0)
+		localStorage.setItem("array", JSON.stringify(arrayJuegos));
 	}
 
 	document.getElementById("precioTotal").innerHTML = (aux.toFixed(2) + "€")
 
-
-
 }
+
 
 function cantidadTotal() {
 
 
+	let cantidadT = cantidadTo
 
 
-	let aux = "";
 
 	for (let i in arrayJuegos) {
 
 		if (arrayJuegos[i][1] > 0) {
 
-			aux = Number(arrayJuegos[i][1] + aux)
+			cantidadT = Number(arrayJuegos[i][1] + cantidadT)
 		}
 	}
-	document.getElementById("cantidadTotal").innerHTML = (aux)
+	document.getElementById("cantidadTotal").innerHTML = (cantidadT)
 
 
 
@@ -381,37 +395,41 @@ function borrarTodo() {
 
 function descuento() {
 
-	let codigo = prompt("Introduzca el codigo de descuento",)
+	let codigo = prompt("INTRODUZCA EL CODIGO DE DESCUENTO",)
 	let descuentoAplicado = false;
 	precioTotal()
 	if (!descuentoAplicado) {
 		if (codigo === "DESC10%") {
-			let cal10 = Number(sumarTotal) * 0.10
-			let desc10 = Number(sumarTotal - cal10)
+			let sumarTotal10 = sumarTotal
+			let cal10 = Number(sumarTotal10) * 0.10
+			let desc10 = Number(sumarTotal10 - cal10)
 			alert("EL DESCUENTO TOTAL: " + cal10.toFixed(2) + "€")
-			document.getElementById("precioTotal").innerHTML = (desc10.toFixed(2) + "€.")
-			descuento=true;
+			document.getElementById("precioTotal").innerHTML = (desc10.toFixed(2) + "€")
+			descuento = true;
 		}
 		else if (codigo === "DESC20%") {
-			let cal20 = Number(sumarTotal) * 0.20
-			let desc20 = Number(sumarTotal - cal20)
+			let sumarTotal20 = sumarTotal
+			let cal20 = Number(sumarTotal20) * 0.20
+			let desc20 = Number(sumarTotal20 - cal20)
 			alert("EL DESCUENTO TOTAL: " + cal20.toFixed(2) + "€")
-			document.getElementById("precioTotal").innerHTML = (desc20.toFixed(2) + "€.")
-			descuento=true;
+			document.getElementById("precioTotal").innerHTML = (desc20.toFixed(2) + "€")
+			descuento = true;
 		}
 		else if (codigo === "DESC25%") {
-			let cal25 = Number(sumarTotal) * 0.25
-			let desc25 = Number(sumarTotal - cal25)
+			let sumarTotal25 = sumarTotal
+			let cal25 = Number(sumarTotal25) * 0.25
+			let desc25 = Number(sumarTotal25 - cal25)
 			alert("EL DESCUENTO TOTAL: " + cal25.toFixed(2) + "€")
-			document.getElementById("precioTotal").innerHTML = (desc25.toFixed(2) + "€.")
-			descuento=true;
+			document.getElementById("precioTotal").innerHTML = (desc25.toFixed(2) + "€")
+			descuento = true;
 		}
 		else {
 			alert("EL CODIGO INTRODUCIDO NO ES VALIDO.")
 		}
 	}
-	else{
+	else {
 		alert("El descuento ya ha sido aplicado.")
+
 	}
 }
 
