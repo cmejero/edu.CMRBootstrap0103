@@ -60,7 +60,7 @@ if (document.getElementById("contador2")) {
 
 
 
-
+// 
 let sumar = "";
 
 productosSeleccionados()
@@ -68,14 +68,14 @@ productosSeleccionados()
 
 
 let cantidadTo = "";
-let vaciarCesta = "";
-cantidadTotal()
 
+cantidadTotal()
+let sumGeneral
 let sumarTotal = "";
 precioTotal()
 
 cantidadPorJuego()
-
+//borrarTodo()
 
 
 
@@ -83,11 +83,12 @@ cantidadPorJuego()
 
 
 //   CARRITO PAGO
-
+// funcion que engloba todas las funciones del carrito de pago
 function maestra() {
 
-	if (validarNumTarjeta() && nombTitular() && fechaCaducidad() && codSeguridad()) {
+	if (validarNumTarjeta() && nombTitular() && fechaCaducidad() && codSeguridad()) {		
 		alert("El pago ha sido realizado correctamente.")
+		borrarTodo()		
 		return true;
 	}
 
@@ -128,7 +129,7 @@ function maestra() {
 
 
 
-
+// funcion que engloba todas las funciones del carrito de datos personales
 function maestra2() {
 
 	if (nombTitular() && codigoPostal())
@@ -152,7 +153,7 @@ function maestra2() {
 
 
 
-
+// funcion que valida la tarjeta del usuario en carrito de pago
 function validarNumTarjeta() {
 
 	let valorNumTarjeta = document.getElementById("numTarjeta").value;
@@ -170,7 +171,7 @@ function validarNumTarjeta() {
 }
 
 
-
+// funcion que valida el nombre de tarjeta de carrito de pago
 function nombTitular() {
 
 
@@ -194,7 +195,7 @@ function nombTitular() {
 
 
 
-
+// funcion que valida  el codigo de seguridad de la tarjeta en carrito de pago
 
 function codSeguridad() {
 	let sdsa = document.getElementById("codigoSeg").value;
@@ -209,7 +210,7 @@ function codSeguridad() {
 }
 
 
-
+// funcion que valida la fecha de caducidad de la tarjeta en carrito de pago
 function fechaCaducidad() {
 
 	let fechaHoy = new Date();
@@ -235,7 +236,7 @@ function fechaCaducidad() {
 
 
 
-
+// funcion que valida el codigo postal en carrito de direccion
 function codigoPostal() {
 
 	let codPos = document.getElementById("codPostal").value
@@ -253,8 +254,9 @@ function codigoPostal() {
 
 
 
-
+// funcion que añade la cantidad de producto
 function pulsar(v) {
+
 	arrayJuegos[v][1]++
 	veces++
 
@@ -267,10 +269,12 @@ function pulsar(v) {
 
 }
 
+// funcion que resta la cantidad de producto
 function decrementar(y) {
-	veces = 0
-	arrayJuegos[y][1]--;
 
+	arrayJuegos[y][1]--;
+	veces--
+	localStorage.setItem("array", JSON.stringify(arrayJuegos));
 
 	productosSeleccionados()
 	cantidadPorJuego()
@@ -279,7 +283,7 @@ function decrementar(y) {
 
 }
 
-
+// funcion que elimina la cantidad de producto y pone a valor 0
 function eliminar(y) {
 	veces = 0
 	arrayJuegos[y][1] = 0;
@@ -289,7 +293,7 @@ function eliminar(y) {
 	precioTotal()
 }
 
-
+// funcion que muestra la cantidad de producto que se ha seleccionado de manera individual
 function mostrarCantidad(v) {
 	v = array[v][1]
 	document.getElementById("mostrarCantidad").innerHTML = (v)
@@ -298,7 +302,7 @@ function mostrarCantidad(v) {
 }
 
 
-
+// funcion que muestra el contenido del array que tenga cantidad de producto mayor a 0
 function productosSeleccionados() {
 
 
@@ -324,20 +328,22 @@ function productosSeleccionados() {
 
 }
 
-
+// funcion que realiza suma de todos los productos añadidos
 function precioTotal() {
 
 
-	let aux = "";
 
 
+
+	let sumaProdPrecio = "";
 
 	for (let i in arrayJuegos) {
 
 		if (arrayJuegos[i][1] > 0) {
 
 			sumarTotal = Number(arrayJuegos[i][1] * arrayJuegos[i][2])
-			aux = Number(aux + sumarTotal);
+			sumaProdPrecio = Number(sumaProdPrecio + sumarTotal);
+			sumGeneral = sumaProdPrecio
 			localStorage.setItem("array", JSON.stringify(arrayJuegos));
 		}
 	}
@@ -349,11 +355,11 @@ function precioTotal() {
 		localStorage.setItem("array", JSON.stringify(arrayJuegos));
 	}
 
-	document.getElementById("precioTotal").innerHTML = (aux.toFixed(2) + "€")
+	document.getElementById("precioTotal").innerHTML = (sumaProdPrecio.toFixed(2) + "€")
 
 }
 
-
+// funcion que muestra la cantidad total de todos los productos en conjunto
 function cantidadTotal() {
 
 
@@ -375,13 +381,13 @@ function cantidadTotal() {
 }
 
 
-
+// funcion que elimina todo lo que hay en el carrito
 function borrarTodo() {
 
 
 	for (let i in arrayJuegos) {
 
-		vaciarCesta = arrayJuegos[i][1] = 0
+		arrayJuegos[i][1] = 0			
 		localStorage.setItem("array", JSON.stringify(arrayJuegos));
 		console.log(arrayJuegos[i][1])
 
@@ -393,14 +399,15 @@ function borrarTodo() {
 
 }
 
+// funcion para realizar descuentos base al precio total
 function descuento() {
 
-	let codigo = prompt("INTRODUZCA EL CODIGO DE DESCUENTO",)
+	let codigo = prompt("INTRODUZCA EL CODIGO DE DESCUENTO")
 	let descuentoAplicado = false;
 	precioTotal()
 	if (!descuentoAplicado) {
 		if (codigo === "DESC10%") {
-			let sumarTotal10 = sumarTotal
+			let sumarTotal10 = sumGeneral
 			let cal10 = Number(sumarTotal10) * 0.10
 			let desc10 = Number(sumarTotal10 - cal10)
 			alert("EL DESCUENTO TOTAL: " + cal10.toFixed(2) + "€")
@@ -408,7 +415,7 @@ function descuento() {
 			descuento = true;
 		}
 		else if (codigo === "DESC20%") {
-			let sumarTotal20 = sumarTotal
+			let sumarTotal20 = sumGeneral
 			let cal20 = Number(sumarTotal20) * 0.20
 			let desc20 = Number(sumarTotal20 - cal20)
 			alert("EL DESCUENTO TOTAL: " + cal20.toFixed(2) + "€")
@@ -416,7 +423,7 @@ function descuento() {
 			descuento = true;
 		}
 		else if (codigo === "DESC25%") {
-			let sumarTotal25 = sumarTotal
+			let sumarTotal25 = sumGeneral
 			let cal25 = Number(sumarTotal25) * 0.25
 			let desc25 = Number(sumarTotal25 - cal25)
 			alert("EL DESCUENTO TOTAL: " + cal25.toFixed(2) + "€")
@@ -435,7 +442,7 @@ function descuento() {
 
 
 
-
+// funcion que muestra la cantidad de producto seleccionados individualmente
 function cantidadPorJuego() {
 
 
@@ -484,7 +491,7 @@ function cantidadPorJuego() {
 
 
 
-
+// funcion que muestra por pantalla la tajeta de los productos agregados al carrito
 function mostrarProductos() {
 
 	var x = document.getElementById('myDIV0');
