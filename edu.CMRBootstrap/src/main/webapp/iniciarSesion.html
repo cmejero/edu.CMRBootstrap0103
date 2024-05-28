@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="UTF-8">
-	<title>PAGINA PRINCIPAL</title>
+	<title>INICIAR SESION</title>
 	<link href="Estilo.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -171,118 +170,123 @@
 
 			</div>
 		</header>
+
 		<main>
-			<div class="row mt-5">
-				<div class="col-md-12 col-sm-12 col-12 border border-2 border-dark filaMedio">
-					
-					
-					
-					
-					
-						<div class="row p-5">
+			<div class="row mt-3">
+				<div
+					class="col-md-12 col-sm-12 col-12 border border-2 border-dark filaMedio formulario1 filaMedio d-flex  justify-content-center">
+
+					<section>
+						<div class="row p-3">
 
 							<div
-								class="col-md-12 col-sm-12 col-12  g-2 border-light border border-3 contenedoresCP p-5">
+								class="col-md-12 col-sm-12 col-12  g-2 border-light border border-3 contenedoresCP p-3">
 
 								<div class="row ">
 
-									<div class="row">
+									<div class="row ">
 										<div class="col-md-12 col-sm-12 col-12    tituloPago ">
 
-
-
-
-											<table class="tablaCarrito border-1">
-												<thead align="center">
-													<tr class="border">
-														<th class="border" scope="col"><b>USUARIO</b></th>
-														<th class="border" scope="col"><b>PRODUCTOS</b></th>
-														<th class="border" scope="col"><b>DIRECCION</b></th>
-														<th class="border" scope="col"><b>FECHA</b></th>
-													</tr>
-												</thead>
-												<tbody align="center" id="datos">
-
-												</tbody>
-												
-
-											</table>
-
-
-
-
-
-
-										</div>
-										
-
-										
-									 
-									 
-									 <div class="col-md-3 col-sm-3 col-3 tituloPago  ">
-
-											<div class="text-decoration-none ">
-												<div class="d-grid gap-2 col-10 p-1 mx-auto">
-													<button class="btn btn-primary p-3 border-light  " onclick="descuento()"
-														style="background-color:rgb(0, 255, 0)"
-														type="button"><b style="font-size: 14px;"><i>AGREGAR</i></b></button>
-
-												</div>
+											<div class="d-flex  justify-content-center"
+												style="margin-left: 8%; margin-bottom: 3%;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+													fill="currentColor" class="bi bi-person-workspace"
+													style="text-align: center;" viewBox="0 0 16 16">
+													<path
+														d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+													<path
+														d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z" />
+												</svg>
 											</div>
-										</div>
-										
-										
-										
-										
-										
-										
-										
-										<div class="col-md-3 col-sm-3 col-3   tituloPago   ">
 
-											<a href="carrito.html" class="text-decoration-none">
-												<div class="d-grid gap-2 col-10 p-1 mx-auto">
-													<button onclick="eliminarDato()" class="btn btn-primary p-3 border-light "
-														style="background-color:rgb(255, 0, 0)"
-														type="button"><b style="font-size: 14px;"><i>eliminar</i></b></button>
 
+											<form onsubmit="return maestra3()">
+
+												<table class="tablaPago" style="margin-left: 8%;">
+
+
+													<tbody>
+
+														<tr class="border-2 border-light border">
+															<td class="border-2 border-light border ">
+																<br>
+																<label><i>
+																		USUARIO:</i>
+																</label>
+																<input id="usu" type="text" name"nombre" required
+																	class="border-dark" style="margin-bottom: 6%;">
+
+																<br>
+															</td>
+
+														</tr>
+
+
+
+														<tr class="border-2 border-light border">
+															<td class="border-2 border-light border ">
+																<br>
+																<label><i>
+																		CONTRASEÑA:</i>
+																</label>
+																<input id="contraseña" type="password" name"nombre"
+																	required class="border-dark"
+																	style="margin-bottom: 6%;">
+
+																<br>
+															</td>
+
+														</tr>
+													</tbody>
+
+
+
+
+												</table>
+
+												<div class="row">
+												<div class="col-md-12 col-sm-12 col-12 tituloPago "
+													style="display: flex; margin-left: 6%;">
+
+
+													<div class="d-grid gap-2 col-7 p-2 mx-auto">
+														<button class="btn btn-primary p-2 border-light  "
+															style="background-color:rgb(128, 128, 128)"
+															type=" submit" name="inicio">
+															<b style="font-size: 14px;"><i>INGRESAR</i></b></button>
+
+													</div>
+
+
+													<div class="d-grid gap-2 col-6 p-2 mx-auto">
+														<a href="gestion.html" style="text-decoration: none ; color:white"><button class="btn btn-primary p-2 border-light  "
+															style="background-color:rgb(128, 128, 128)"
+															type="button" name="inicio">
+															<b style="font-size: 14px; "><i>SIGUIENTE</i></b></button></a>
+
+													</div>
 												</div>
-											</a>
 										</div>
-										
-						
-										
+
+
+										</form>
 									</div>
-
-
-
 								</div>
 							</div>
-
 						</div>
-
-
-						
-
-
-
-
-
-
-					
-					
-					
-					
-					
-					
-					
-					
-
 				</div>
+
+				</section>
+
+
+
+
+
+
 			</div>
-		</main>
+	</div>
 
-
-
+	</main>
 
 	<footer>
 
@@ -290,7 +294,7 @@
 			<div class="col-md-12 d-sm-none d-none d-md-block border border-2 border-light p-2 piePagina">
 
 				<ul class="list-unstyled">
-					
+
 					<a href="" class="enlaces__item letraPP ">
 						<li>Términos y condiciones</li>
 					</a>
@@ -337,7 +341,7 @@
 			<div class="d-md-none col-sm-12 col-12 d-block d-sm-block border border-2 border-light p-2 piePagina">
 
 				<ul class="list-unstyled">
-					
+
 					<a href="" class="enlaces__item letraPPSm ">
 						<li>Términos y condiciones</li>
 					</a>
@@ -387,7 +391,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-
 
 
 </body>

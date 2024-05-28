@@ -86,9 +86,9 @@ cantidadPorJuego()
 // funcion que engloba todas las funciones del carrito de pago
 function maestra() {
 
-	if (validarNumTarjeta() && nombTitular() && fechaCaducidad() && codSeguridad()) {		
+	if (validarNumTarjeta() && nombTitular() && fechaCaducidad() && codSeguridad()) {
 		alert("El pago ha sido realizado correctamente.")
-		borrarTodo()		
+		borrarTodo()
 		return true;
 	}
 
@@ -387,7 +387,7 @@ function borrarTodo() {
 
 	for (let i in arrayJuegos) {
 
-		arrayJuegos[i][1] = 0			
+		arrayJuegos[i][1] = 0
 		localStorage.setItem("array", JSON.stringify(arrayJuegos));
 		console.log(arrayJuegos[i][1])
 
@@ -765,4 +765,161 @@ function mostrarProductos() {
 		x.style.display = 'block';
 	}
 }
+
+
+//############################# INICIO SESION #######################################
+
+function maestra3() {
+	if (usuario() && pass()) {
+
+		return true;
+
+	}
+
+	else if (!usuario()) {
+		alert("El usuario introducido no existe");
+		return false;
+	}
+
+
+	else if (!pass()) {
+		alert("Contraseña incorrecta");
+		return false;
+	}
+
+}
+
+function usuario() {
+	let usu = document.getElementById("usu").value
+
+	if (usu == "admin") {
+		return 1;
+	}
+	else {
+
+		return 0;
+	}
+
+}
+
+function pass() {
+	let usu = document.getElementById("contraseña").value
+
+	if (usu == "admin123") {
+		return 1;
+	}
+	else {
+
+		return 0;
+	}
+
+}
+
+
+
+
+
+//############################# GESTION DE DATOS ###############################
+let arrayClientes = []
+
+const dataStored3 = localStorage.getItem("clientes");
+if (dataStored3) {
+	arrayClientes = JSON.parse(dataStored3)
+	console.log("memoria clientes")
+	console.log(arrayClientes)
+}
+if (document.getElementById("contador3")) {
+	document.getElementById("contador3").innerHTML = typeof (arrayClientes)
+}
+
+let clientes = {
+
+		usuario: usuarioC,
+		productos: productosC,
+		direccion: direccionC,
+		direccionCalle: direccionCc,
+		direccionPiso: direccionCp,
+		fecha: fechaC
+	}
+
+let usuarioC
+let productosC
+let direccionC
+let direccionCc
+let direccionCp
+let fechaC
+
+
+
+	
+function agregarCliente() {
+
+	usuarioC = document.getElementById("dni").value
+	productosC = productosCliente()
+	direccionC = document.getElementById("direccion").value
+	direccionCc = document.getElementById("direccionCc").value
+	direccionCp = document.getElementById("direccionCp").value
+	fechaC = new date()
+	arrayClientes.push(clientes)
+
+}
+
+	
+
+	
+
+
+
+
+
+function productosCliente() {
+
+	document.getElementById("juegosCliente").innerHTML = "";
+
+	for (let i in arrayJuegos) {
+
+		if (arrayJuegos[i][1] > 0) {
+			sumar = Number(arrayJuegos[i][1] * arrayJuegos[i][2])
+
+
+			document.getElementById("juegosCliente").innerHTML += (arrayJuegos[i][0] + " x" + sumar + "<br>")
+
+		}
+
+
+	}
+}
+
+function mostrarDatos() {
+	document.getElementById("datos").innerHTML = "";
+
+	for (let i in agregarCliente) {
+		document.getElementById("datos").innerHTML = ("<tr><td>" + clientes.usuario + "</td><td>" + clientes.productos + "</td><td>" + clientes.direccionCalle + "-" +clientes.direccionPiso + " ("+ clientes.direccion + ")" +"</td><td>" +clientes.fecha + "</td></tr>");
+	}
+
+}
+
+function eliminarDato(){
+	
+	
+	
+	let usuarioEliminar = prompt("introduzca el dni del usuario que quieres eliminar")
+	
+	for(let i = 0; i < arrayClientes.length; i++){
+		if(clientes.usuario == usuarioEliminar ){
+			
+			arrayClientes.splice(i,1)
+			break;
+			
+		}
+	}
+	mostrarDatos();
+}
+
+
+
+
+
+
+
 
