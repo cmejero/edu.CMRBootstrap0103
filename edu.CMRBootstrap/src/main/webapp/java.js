@@ -771,7 +771,7 @@ function mostrarProductos() {
 
 function maestra3() {
 	if (usuario() && pass()) {
-
+		alert("Has iniciado correctamente, pulse siguiente.")
 		return true;
 
 	}
@@ -832,42 +832,19 @@ if (document.getElementById("contador3")) {
 	document.getElementById("contador3").innerHTML = typeof (arrayClientes)
 }
 
-let clientes = {
+arrayClientes.push({usuario: document.getElementById("dni").value,
 
-		usuario: usuarioC,
-		productos: productosC,
-		direccion: direccionC,
-		direccionCalle: direccionCc,
-		direccionPiso: direccionCp,
+		productos: productosCliente(),
+
+		direccion: document.getElementById("direccion").value,
+
+		direccionCalle: document.getElementById("direccionCc").value,
+
+		direccionPiso: document.getElementById("direccionCp").value,
+
 		fecha: fechaC
-	}
 
-let usuarioC
-let productosC
-let direccionC
-let direccionCc
-let direccionCp
-let fechaC
-
-
-
-	
-function agregarCliente() {
-
-	usuarioC = document.getElementById("dni").value
-	productosC = productosCliente()
-	direccionC = document.getElementById("direccion").value
-	direccionCc = document.getElementById("direccionCc").value
-	direccionCp = document.getElementById("direccionCp").value
-	fechaC = new date()
-	arrayClientes.push(clientes)
-
-}
-
-	
-
-	
-
+})
 
 
 
@@ -893,24 +870,24 @@ function productosCliente() {
 function mostrarDatos() {
 	document.getElementById("datos").innerHTML = "";
 
-	for (let i in agregarCliente) {
-		document.getElementById("datos").innerHTML = ("<tr><td>" + clientes.usuario + "</td><td>" + clientes.productos + "</td><td>" + clientes.direccionCalle + "-" +clientes.direccionPiso + " ("+ clientes.direccion + ")" +"</td><td>" +clientes.fecha + "</td></tr>");
+	for (let i in arrayClientes) {
+		document.getElementById("datos").innerHTML = ("<tr><td>" + arrayClientes[i][usuario] + "</td><td>" + clientes.productos + "</td><td>" + clientes.direccionCalle + "-" + clientes.direccionPiso + " (" + clientes.direccion + ")" + "</td><td>" + clientes.fecha + "</td></tr>");
 	}
 
 }
 
-function eliminarDato(){
-	
-	
-	
+function eliminarDato() {
+
+
+
 	let usuarioEliminar = prompt("introduzca el dni del usuario que quieres eliminar")
-	
-	for(let i = 0; i < arrayClientes.length; i++){
-		if(clientes.usuario == usuarioEliminar ){
-			
-			arrayClientes.splice(i,1)
+
+	for (let i = 0; i < arrayClientes.length; i++) {
+		if (clientes.usuario == usuarioEliminar) {
+
+			arrayClientes.splice(i, 1)
 			break;
-			
+
 		}
 	}
 	mostrarDatos();
